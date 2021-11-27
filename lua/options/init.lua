@@ -23,7 +23,7 @@ vim.wo.wrap = false
 vim.wo.number = true
 vim.o.cursorline = true
 vim.o.signcolumn = 'yes'
-  
+
 vim.o.tabstop = 2
 vim.bo.tabstop = 2
 vim.o.softtabstop = 2
@@ -33,3 +33,7 @@ vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
+
+-- blankline plugin
+-- vim.opt.list = true
+-- vim.opt.listchars:append("eol:↴")
