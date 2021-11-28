@@ -8,7 +8,7 @@ require'format'.setup {
       cmd = {
         function(file)
           return string.format(
-                     'lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb --indent-width=2 %s',
+                     'lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=70 --break-after-table-lb --indent-width=2 %s',
                      file)
         end
       }
