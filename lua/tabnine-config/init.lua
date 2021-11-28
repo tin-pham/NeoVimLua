@@ -4,5 +4,5 @@ tabnine:setup({
   max_num_results = 20,
   sort = true,
   run_on_every_keystroke = true,
-  snippet_placeholder = ''
+  snippet_placeholder = '🔥'
 })
