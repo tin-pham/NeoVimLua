@@ -1,5 +1,6 @@
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+                         vim.lsp.protocol.make_client_capabilities())
 
 -- Emmet
 
@@ -18,8 +19,13 @@ require'lspconfig'.sqls.setup {
   settings = {
     sqls = {
       connections = {
-        {driver = 'mysql', dataSourceName = 'root:root@tcp(127.0.0.1:13306)/world'},
-        {driver = 'postgresql', dataSourceName = 'host=localhost port=5432 user=shin password=Pbt12345 dbname=test sslmode=disable'}
+        {
+          driver = 'mysql',
+          dataSourceName = 'root:root@tcp(127.0.0.1:13306)/world'
+        }, {
+          driver = 'postgresql',
+          dataSourceName = 'host=localhost port=5432 user=shin password=Pbt12345 dbname=test sslmode=disable'
+        }
       }
     }
   }
@@ -37,14 +43,19 @@ else
 end
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = '/home/shin/.config/nvim/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
+local sumneko_root_path =
+    '/home/shin/.config/nvim/lua-language-server'
+local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name
+                           .. "/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local langservers = {'html', 'cssls', 'ls_emmet', 'tsserver', 'sumneko_lua', 'vuels', 'sqls', 'vimls'}
+local langservers = {
+  'html', 'cssls', 'ls_emmet', 'tsserver', 'sumneko_lua', 'vuels',
+  'sqls', 'vimls'
+}
 
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then

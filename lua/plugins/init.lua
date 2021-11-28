@@ -12,9 +12,15 @@ return require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow' -- Rainbow
 
   -- Status Line
-  use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   -- Buffer Line 
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
   -- Directory Tree 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -31,7 +37,10 @@ return require('packer').startup(function(use)
     end
   }
   -- Telescope
-  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/plenary.nvim'}}
+  }
 
   -- Autocomplete
   use 'neovim/nvim-lspconfig'
@@ -44,6 +53,12 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  -- Tabnine
+  use {
+    'tzachar/cmp-tabnine',
+    run = './install.sh',
+    requires = 'hrsh7th/nvim-cmp'
+  }
   -- Icon for autocomplete
   use 'onsails/lspkind-nvim'
 

@@ -17,6 +17,7 @@ require('format-config')
 require('toggleterm-config')
 require('comment-config')
 require('lsp')
+require('tabnine-config')
 
 vim.cmd('colorscheme rose-pine')
 
