@@ -69,4 +69,7 @@ return require('packer').startup(function(use)
   -- Terminal inside Vim
   use {"akinsho/toggleterm.nvim"}
 
+  -- Comment in Vim
+
+  use 'terrortylor/nvim-comment'
 end)

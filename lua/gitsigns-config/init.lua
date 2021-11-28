@@ -1,3 +1,1 @@
-require'gitsigns'.setup{
-  current_line_blame = false,
-}
+require'gitsigns'.setup {current_line_blame = true}
