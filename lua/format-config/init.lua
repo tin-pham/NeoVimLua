@@ -15,22 +15,23 @@ require'format'.setup {
         end
       }
     }
-  }
+  },
 
-  -- sql = {
-  --   {
-  --     cmd = {
-  --       function(file)
-  --         return string.format(
-  --                    'sql-formatter -o /tmp/**/*.sql -l postgresql -t -u',
-  --                    file)
-  --       end
-  --     }
-  --   }
-  -- }
+  sql = {
+    {
+      cmd = {
+        function(file)
+          return string.format(
+                     'sql-formatter -o /tmp/**/*test-query* -l postgresql -t -u',
+                     file)
+        end
+      }
+    }
+  }
 
 }
 
 -- Auto Format on Save
 vim.cmd('autocmd BufWritePost * FormatWrite')
-
+-- vim.cmd('autocmd BufWritePre * FormatWrite')
+-- vim.cmd('autocmd BufWritePost * noau FormatWrite')
