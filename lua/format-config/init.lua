@@ -2,7 +2,9 @@ require'format'.setup {
   html = {{cmd = {"prettier -w"}}},
   css = {{cmd = {"prettier -w"}}},
   json = {{cmd = {"prettier -w"}}},
-  javascript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+  javascript = {
+    {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
+  },
   lua = {
     {
       cmd = {
@@ -14,6 +16,18 @@ require'format'.setup {
       }
     }
   }
+
+  -- sql = {
+  --   {
+  --     cmd = {
+  --       function(file)
+  --         return string.format(
+  --                    'sql-formatter -o /tmp/**/*.sql -l postgresql -t -u',
+  --                    file)
+  --       end
+  --     }
+  --   }
+  -- }
 
 }
 
