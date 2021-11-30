@@ -54,7 +54,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local langservers = {
   'html', 'cssls', 'ls_emmet', 'tsserver', 'sumneko_lua', 'vuels',
-  'sqls', 'vimls'
+  'psql', 'vimls'
 }
 
 for _, server in ipairs(langservers) do

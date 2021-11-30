@@ -87,4 +87,9 @@ return require('packer').startup(function(use)
   -- Comment in Vim
 
   use 'terrortylor/nvim-comment'
+
+  -- SQL 
+  use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-ui'
+
 end)
