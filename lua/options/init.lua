@@ -34,6 +34,9 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 
+-- Change file type
+vim.cmd('au BufNewFile,BufRead *.ejs set filetype=html')
+
 -- blankline plugin
 -- vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")
