@@ -19,6 +19,7 @@ require('comment-config')
 require('lsp')
 require('tabnine-config')
 require('dadbod-config')
+require('devicon-config')
 
 vim.cmd('colorscheme rose-pine')
 
