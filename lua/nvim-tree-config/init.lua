@@ -64,3 +64,12 @@ vim.g.nvim_tree_icons = {
     symlink_open = ""
   }
 }
+
+vim.api.nvim_exec([[
+function! DisableST()
+  return " "
+endfunction
+au BufEnter NvimTree setlocal statusline=%!DisableST()
+]], false)
+
+vim.cmd('hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg')
