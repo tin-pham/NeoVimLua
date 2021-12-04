@@ -2,22 +2,27 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
     layout_config = {
-      width = 0.75,
-      prompt_position = "top",
-      preview_cutoff = 120,
-      horizontal = {mirror = false},
-      vertical = {mirror = false}
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.55,
+        results_width = 0.8
+      },
+      vertical = {mirror = false},
+      width = 0.8,
+      height = 0.8,
+      preview_cutoff = 120
+
     },
     find_command = {
       'rg', '--no-heading', '--with-filename', '--line-number',
       '--column', '--smart-case'
     },
     prompt_prefix = " ",
-    selection_caret = " ",
+    selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {
