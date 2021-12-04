@@ -20,6 +20,7 @@ require('lsp')
 require('tabnine-config')
 require('dadbod-config')
 require('devicon-config')
+require('surround-config')
 
 vim.cmd('colorscheme rose-pine')
 
