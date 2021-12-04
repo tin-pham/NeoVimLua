@@ -1,4 +1,6 @@
-vim.g.dbs = {test = 'postgres://shin:Pbt12345@localhost:5432/test'}
+vim.g.dbs = {
+  test = 'postgres://shin:Pbt12345@localhost:5432/blogs_database'
+}
 
 vim.g.db_ui_auto_execute_table_helpers = 0
 vim.g.db_ui_winwidth = 20
