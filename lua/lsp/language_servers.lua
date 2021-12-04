@@ -14,6 +14,49 @@ require'lspconfig.configs'.ls_emmet = {
     settings = {}
   }
 }
+require'lspconfig.configs'.emmet_ls = {
+  default_config = {
+    cmd = {'emmet-ls', '--stdio'},
+    filetypes = {'html', 'css', 'blade'},
+    root_dir = function(_)
+      return vim.loop.cwd()
+    end,
+    settings = {}
+  }
+}
+
+require'lspconfig'.html.setup {
+  cmd = {"vscode-html-language-server", "--stdio"},
+  filetypes = {"html"},
+  init_options = {
+    configurationSection = {"html", "css", "javascript"},
+    embeddedLanguages = {css = true, javascript = true}
+  },
+  single_file_support = true
+}
+
+require'lspconfig'.jsonls.setup({
+  settings = {
+    json = {
+      schemas = {
+        {
+          fileMatch = {"package.json"},
+          url = "https://json.schemastore.org/package.json"
+        }, {
+          fileMatch = {"jsconfig*.json"},
+          url = "https://json.schemastore.org/jsconfig.json"
+        }, {
+          fileMatch = {
+            ".prettierrc", ".prettierrc.json", "prettier.config.json"
+          },
+          url = "https://json.schemastore.org/prettierrc.json"
+        }
+
+      }
+
+    }
+  }
+})
 
 require'lspconfig'.sqls.setup {
   settings = {
@@ -53,8 +96,8 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local langservers = {
-  'html', 'cssls', 'ls_emmet', 'tsserver', 'sumneko_lua', 'vuels',
-  'sqls', 'vimls'
+  'html', 'cssls', 'jsonls', 'emmet_ls', 'tsserver', 'sumneko_lua',
+  'vuels', 'sqls', 'vimls'
 }
 
 for _, server in ipairs(langservers) do
