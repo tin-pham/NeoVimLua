@@ -7,7 +7,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 require'lspconfig.configs'.ls_emmet = {
   default_config = {
     cmd = {'ls_emmet', '--stdio'},
-    filetypes = {'html', 'css', 'scss'}, -- Add the languages you use, see language support
+    filetypes = {
+      'html', 'css', 'scss', 'javascript', 'javascriptreact'
+    }, -- Add the languages you use, see language support
     root_dir = function(_)
       return vim.loop.cwd()
     end,
@@ -17,7 +19,9 @@ require'lspconfig.configs'.ls_emmet = {
 require'lspconfig.configs'.emmet_ls = {
   default_config = {
     cmd = {'emmet-ls', '--stdio'},
-    filetypes = {'html', 'css', 'blade'},
+    filetypes = {
+      'html', 'css', 'scss', 'javascript', 'javascriptreact'
+    },
     root_dir = function(_)
       return vim.loop.cwd()
     end,
@@ -96,7 +100,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local langservers = {
-  'html', 'cssls', 'jsonls', 'emmet_ls', 'tsserver', 'sumneko_lua',
+  'html', 'cssls', 'jsonls', 'ls_emmet', 'tsserver', 'sumneko_lua',
   'vuels', 'sqls', 'vimls'
 }
 
