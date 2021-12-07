@@ -1,1 +1,1 @@
-require('themes/rose-pine')
+require('themes/catppuccin')

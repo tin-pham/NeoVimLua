@@ -4,6 +4,8 @@ return require('packer').startup(function(use)
   -- Theme
   use 'navarasu/onedark.nvim'
   use 'rose-pine/neovim'
+  use 'yashguptaz/calvera-dark.nvim'
+  use({"catppuccin/nvim", as = "catppuccin"})
   -- Syntax Highlight
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use 'windwp/nvim-autopairs'
@@ -16,6 +18,7 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+
   -- Buffer Line 
   use {
     'akinsho/bufferline.nvim',
@@ -76,7 +79,7 @@ return require('packer').startup(function(use)
   use 'glepnir/dashboard-nvim'
 
   -- Indent Guide
-  -- use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Auto Indent/Format
   use 'lukas-reineke/format.nvim'
@@ -94,5 +97,8 @@ return require('packer').startup(function(use)
 
   -- Vim Surround
   use 'blackCauldron7/surround.nvim'
+
+  -- Zen Mode
+  use 'folke/zen-mode.nvim'
 
 end)
