@@ -63,7 +63,8 @@ local mappings = {
     t = {":ToggleTerm<cr>", "Split Below"},
     f = {toggle_float, "Floating Terminal"},
     l = {toggle_lazygit, "Lazygit"}
-  }
+  },
+  z = {':ZenMode<cr>', "ZenMode Toggle"}
 }
 
 wk.register(mappings, opts)
