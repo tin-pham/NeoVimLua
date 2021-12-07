@@ -1,6 +1,7 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
                          vim.lsp.protocol.make_client_capabilities())
+local util = require 'lspconfig/util'
 
 -- Emmet
 
@@ -8,7 +9,7 @@ require'lspconfig.configs'.ls_emmet = {
   default_config = {
     cmd = {'ls_emmet', '--stdio'},
     filetypes = {
-      'html', 'css', 'scss', 'javascript', 'javascriptreact'
+      'html', 'css', 'scss', 'javascript', 'jsx', 'javascriptreact'
     }, -- Add the languages you use, see language support
     root_dir = function(_)
       return vim.loop.cwd()
@@ -29,9 +30,21 @@ require'lspconfig.configs'.emmet_ls = {
   }
 }
 
+require'lspconfig.configs'.emmet_language_server = {
+  default_config = {
+    cmd = {'emmet-language-server', '--stdio'},
+    filetypes = {
+      'html', 'typescriptreact', 'javascriptreact', 'javascript',
+      'typescript', 'javascript.jsx', 'typescript.tsx', 'css'
+    },
+    root_dir = util.root_pattern("package.json", ".git"),
+    settings = {}
+  }
+}
+
 require'lspconfig'.html.setup {
   cmd = {"vscode-html-language-server", "--stdio"},
-  filetypes = {"html"},
+  filetypes = {"html", "jsx", "javascriptreact"},
   init_options = {
     configurationSection = {"html", "css", "javascript"},
     embeddedLanguages = {css = true, javascript = true}
