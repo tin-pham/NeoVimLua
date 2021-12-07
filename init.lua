@@ -1,8 +1,8 @@
 require('plugins')
 require('options')
 require('keybindings')
-
 require('themes')
+
 require('treesitter-config') -- Highlight Syntax
 require('autopair-config') -- Autopair
 require('lualine-config') -- Status Line
