@@ -21,6 +21,7 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
 vim.wo.wrap = false
 vim.wo.number = true
+vim.wo.relativenumber = true
 vim.o.cursorline = true
 vim.o.signcolumn = 'yes'
 
