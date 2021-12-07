@@ -11,3 +11,5 @@ vim.g.rose_pine_disable_background = false
 
 -- Use bold vertical split line
 vim.g.rose_pine_bold_vertical_split_line = true
+
+vim.cmd('colorscheme rose-pine')
