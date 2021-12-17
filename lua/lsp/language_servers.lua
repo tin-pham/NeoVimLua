@@ -84,7 +84,7 @@ require'lspconfig'.sqls.setup {
           dataSourceName = 'root:root@tcp(127.0.0.1:13306)/world'
         }, {
           driver = 'postgresql',
-          dataSourceName = 'host=localhost port=5432 user=shin password=Pbt12345 dbname=test sslmode=disable'
+          dataSourceName = 'host=localhost port=5432 user=shin password=test1234 dbname=test sslmode=disable'
         }
       }
     }
