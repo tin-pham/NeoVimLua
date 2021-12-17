@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
   use 'rose-pine/neovim'
   use 'yashguptaz/calvera-dark.nvim'
   use({"catppuccin/nvim", as = "catppuccin"})
+  use 'shaeinst/roshnivim-cs'
   -- Syntax Highlight
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use 'windwp/nvim-autopairs'
@@ -79,7 +80,7 @@ return require('packer').startup(function(use)
   use 'glepnir/dashboard-nvim'
 
   -- Indent Guide
-  use "lukas-reineke/indent-blankline.nvim"
+  -- use "lukas-reineke/indent-blankline.nvim"
 
   -- Auto Indent/Format
   use 'lukas-reineke/format.nvim'
@@ -90,6 +91,7 @@ return require('packer').startup(function(use)
   -- Comment in Vim
 
   use 'terrortylor/nvim-comment'
+  use 'suy/vim-context-commentstring'
 
   -- SQL 
   use 'tpope/vim-dadbod'
@@ -100,5 +102,8 @@ return require('packer').startup(function(use)
 
   -- Zen Mode
   use 'folke/zen-mode.nvim'
+
+  -- Document Generation
+  use {'kkoomen/vim-doge', run = ":call doge#install()"}
 
 end)

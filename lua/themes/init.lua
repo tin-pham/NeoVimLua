@@ -1,1 +1,1 @@
-require('themes/catppuccin')
+require('themes/roshnivim')
