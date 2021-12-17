@@ -9,7 +9,7 @@ vim.o.splitright = true
 vim.opt.termguicolors = true
 vim.o.conceallevel = 0
 vim.o.showtabline = 2
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
@@ -39,6 +39,8 @@ vim.opt.fillchars = {eob = " "}
 
 -- Change file type
 vim.cmd('au BufNewFile,BufRead *.ejs set filetype=html')
+
+-- vim.cmd('au FileType javascript set filetype=javascriptreact')
 
 -- Hide tilde(~) from neovim 
 
