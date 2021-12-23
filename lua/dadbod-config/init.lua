@@ -1,5 +1,5 @@
 vim.g.dbs = {
-  test = 'postgres://shin:test1234@localhost:5432/tech_database'
+  test = 'postgres://shin:test1234@localhost/todos_database'
 }
 
 vim.g.db_ui_auto_execute_table_helpers = 0
