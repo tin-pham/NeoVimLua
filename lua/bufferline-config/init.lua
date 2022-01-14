@@ -17,7 +17,12 @@ require("bufferline").setup {
     show_buffer_close_icons = true,
     separator_style = "thin",
     always_show_bufferline = true,
-    diagnostics = false, -- "or nvim_lsp"
+    diagnostics = 'nvim_lsp', -- "or nvim_lsp"
+    diagnostics_indicator = function(count, level, diagnostics_dict,
+                                     context)
+      local icon = level:match("error") and " " or " "
+      return " " .. icon .. count
+    end,
     custom_filter = function(buf_number)
       -- Func to filter out our managed/persistent split terms
       local present_type, type = pcall(function()
