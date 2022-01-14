@@ -1,6 +1,9 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- Dependencies 
+  use 'nvim-lua/plenary.nvim'
   -- Theme
   use 'navarasu/onedark.nvim'
   use 'rose-pine/neovim'
@@ -106,4 +109,6 @@ return require('packer').startup(function(use)
   -- Document Generation
   use {'kkoomen/vim-doge', run = ":call doge#install()"}
 
+  -- Rest HTTP Request 
+  use 'NTBBloodbath/rest.nvim'
 end)
