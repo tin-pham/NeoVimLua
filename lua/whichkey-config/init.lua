@@ -30,7 +30,8 @@ local mappings = {
     f = {"<cmd>Telescope find_files<cr>", "Find File"},
     g = {"<cmd>Telescope live_grep<cr>", "Find Word"}
   },
-  d = {name = 'SQL Dadbod', t = {":DBUIToggle<cr>", "Dadbod Toggle"}},
+  d = {name = 'SQL Dadbod', t = {":DBUIToggle<CR>", "Dadbod Toggle"}},
+  R = {"<Plug>RestNvim", "Rest Request"},
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},

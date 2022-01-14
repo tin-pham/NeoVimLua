@@ -25,4 +25,5 @@ require('surround-config')
 -- require('blankline-config')
 require('zenmode-config')
 require('doge-config')
+require('rest-config')
 
