@@ -27,7 +27,7 @@ require'format'.setup {
       cmd = {
         function(file)
           return string.format(
-                     'sql-formatter -o /tmp/**/*test-query* -l postgresql -t -u',
+                     'prettier-sql -o /tmp/**/*test*-query* -l postgresql',
                      file)
         end
       }
