@@ -9,7 +9,7 @@ require("nvim-web-devicons").set_icon {
   js = {icon = "", color = darkYellow, name = "JavaScript"},
   css = {icon = "", color = blue, name = 'css'},
   scss = {icon = "", color = pink, name = 'sass'},
-  html = {icon = "", color = red, name = 'html'}
-
+  html = {icon = "", color = red, name = 'html'},
+  http = {icon = "", color = green, name = 'http'}
 }
 
