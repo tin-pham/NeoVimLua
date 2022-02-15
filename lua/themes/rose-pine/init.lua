@@ -1,15 +1,35 @@
--- Set variant
--- Defaults to 'dawn' if vim background is light
--- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
-vim.g.rose_pine_variant = 'base'
+require('rose-pine').setup({
+  ---@usage 'main'|'moon'
+  dark_variant = 'main',
+  bold_vert_split = false,
+  dim_nc_background = false,
+  disable_background = false,
+  disable_float_background = false,
+  disable_italics = false,
+  ---@usage string hex value or named color from rosepinetheme.com/palette
+  groups = {
+    border = 'highlight_med',
+    comment = 'muted',
+    link = 'iris',
+    punctuation = 'subtle',
 
--- Disable italics
-vim.g.rose_pine_disable_italics = true
+    error = 'love',
+    hint = 'iris',
+    info = 'foam',
+    warn = 'gold',
 
--- Use terminal background
-vim.g.rose_pine_disable_background = false
+    headings = {
+      h1 = 'iris',
+      h2 = 'foam',
+      h3 = 'rose',
+      h4 = 'gold',
+      h5 = 'pine',
+      h6 = 'foam'
+    }
+    -- or set all headings at once
+    -- headings = 'subtle'
+  }
+})
 
--- Use bold vertical split line
-vim.g.rose_pine_bold_vertical_split_line = true
-
+-- set colorscheme after options
 vim.cmd('colorscheme rose-pine')
