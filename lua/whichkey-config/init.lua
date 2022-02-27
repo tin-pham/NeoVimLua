@@ -31,6 +31,10 @@ local mappings = {
     g = {"<cmd>Telescope live_grep<cr>", "Find Word"}
   },
   d = {name = 'SQL Dadbod', t = {":DBUIToggle<CR>", "Dadbod Toggle"}},
+  r = {
+    "<Plug>ReplaceWithRegisterOperator",
+    "Replace with Register Operator"
+  },
   R = {"<Plug>RestNvim", "Rest Request"},
   l = {
     name = "LSP",

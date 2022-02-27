@@ -101,7 +101,13 @@ return require('packer').startup(function(use)
   use 'kristijanhusak/vim-dadbod-ui'
 
   -- Vim Surround
-  use 'blackCauldron7/surround.nvim'
+  -- This have been disappeared
+  -- use 'blackCauldron7/surround.nvim'
+  -- use 'machakann/vim-sandwich'
+  use 'tpope/vim-surround'
+
+  -- Replace with register
+  use 'inkarkat/vim-ReplaceWithRegister'
 
   -- Zen Mode
   use 'folke/zen-mode.nvim'
