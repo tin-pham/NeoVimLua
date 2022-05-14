@@ -1,9 +1,15 @@
 require("zen-mode").setup {
   window = {
-    backdrop = 0.90,
-    width = .85, -- width will be 85% of the editor width
-    height = 0.95
-
+    backdrop = 0.95,
+    width = 100,
+    height = 0.8,
+    options = { signcolumn = "no", number = false, cursorline = false }
   },
-  plugins = {gitsigns = {enabled = false}}
+  plugins = {
+    options = { enabled = true, ruler = false, showcmd = false },
+    twilight = { enabled = true },
+    gitsigns = { enabled = false },
+    tmux = { enabled = false }
+  }
 }
+

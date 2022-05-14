@@ -34,16 +34,19 @@ vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
+vim.o.wildmenu = true
 
 vim.opt.fillchars = {eob = " "}
 
 -- Change file type
 vim.cmd('au BufNewFile,BufRead *.ejs set filetype=html')
+vim.cmd('au BufNewFile,BufRead *.hbs set filetype=html')
+vim.cmd('au BufNewFile,BufRead *.handlebars set filetype=html')
 
 -- vim.cmd('au FileType javascript set filetype=javascriptreact')
+vim.cmd('set path+=**')
+vim.cmd('set tags=tags;/')
+vim.cmd('set guicursor=i:block')
 
--- Hide tilde(~) from neovim 
-
--- blankline plugin
--- vim.opt.list = true
--- vim.opt.listchars:append("eol:↴")
+-- Disable automatic commenting
+vim.cmd('autocmd FileType * setlocal formatoptions-=cro')
