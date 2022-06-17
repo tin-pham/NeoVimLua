@@ -5,7 +5,7 @@ require('rose-pine').setup({
   dim_nc_background = false,
   disable_background = false,
   disable_float_background = false,
-  disable_italics = false,
+  disable_italics = true,
   ---@usage string hex value or named color from rosepinetheme.com/palette
   groups = {
     border = 'highlight_med',
@@ -18,14 +18,7 @@ require('rose-pine').setup({
     info = 'foam',
     warn = 'gold',
 
-    headings = {
-      h1 = 'iris',
-      h2 = 'foam',
-      h3 = 'rose',
-      h4 = 'gold',
-      h5 = 'pine',
-      h6 = 'foam'
-    }
+    headings = { h1 = 'iris', h2 = 'foam', h3 = 'rose', h4 = 'gold', h5 = 'pine', h6 = 'foam' }
     -- or set all headings at once
     -- headings = 'subtle'
   }

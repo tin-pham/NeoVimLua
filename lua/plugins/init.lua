@@ -16,6 +16,7 @@ return require('packer').startup({
     -- Dependencies
     use 'nvim-lua/plenary.nvim'
     -- Theme
+    use 'olimorris/onedarkpro.nvim'
     use 'rose-pine/neovim'
     -- Syntax Highlight
     use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }

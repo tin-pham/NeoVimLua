@@ -36,12 +36,14 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.o.wildmenu = true
 
-vim.opt.fillchars = {eob = " "}
+vim.opt.fillchars = { eob = " " }
 
 -- Change file type
 vim.cmd('au BufNewFile,BufRead *.ejs set filetype=html')
 vim.cmd('au BufNewFile,BufRead *.hbs set filetype=html')
 vim.cmd('au BufNewFile,BufRead *.handlebars set filetype=html')
+vim.cmd('au BufNewFile,BufRead .env.development set filetype=.env')
+vim.cmd('au BufNewFile,BufRead *.env.production set filetype=.env')
 
 -- vim.cmd('au FileType javascript set filetype=javascriptreact')
 vim.cmd('set path+=**')
