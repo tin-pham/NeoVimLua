@@ -2,7 +2,7 @@ require('nvim-autopairs').setup {
 
   -- { |} <CR> =>  {
   --                 |
-  --             }    
+  --             }
 
   check_ts = true
 
@@ -31,9 +31,8 @@ npairs.add_rules {
   end):use_key(']')
 }
 
--- Auto Indent when <CR> 
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
-cmp.event:on('confirm_done',
-             cmp_autopairs.on_confirm_done({map_char = {tex = ''}}))
-
+-- -- Auto Indent when <CR>
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- local cmp = require('cmp')
+-- cmp.event:on('confirm_done',
+--              cmp_autopairs.on_confirm_done({map_char = {tex = ''}}))

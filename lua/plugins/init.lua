@@ -19,15 +19,15 @@ return require('packer').startup({
     use 'olimorris/onedarkpro.nvim'
     use 'rose-pine/neovim'
     -- Syntax Highlight
-    use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+    use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
 
     -- Extenstion
-    use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
+    use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
     -- use 'p00f/nvim-ts-rainbow' -- Rainbow
-    use { 'kyazdani42/nvim-web-devicons', config = "require('devicon-config')" }
+    use {'kyazdani42/nvim-web-devicons', config = "require('devicon-config')"}
 
     -- Status Line
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+    use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
 
     -- Buffer Line
     use {
@@ -50,19 +50,20 @@ return require('packer').startup({
       config = "require('nvim-tree-config')"
     }
     -- Which Key
-    use { "folke/which-key.nvim", event = "BufWinEnter", config = "require('whichkey-config')" }
+    use {"folke/which-key.nvim", event = "BufWinEnter", config = "require('whichkey-config')"}
     -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
-      requires = { { 'nvim-lua/plenary.nvim' } },
+      requires = {{'nvim-lua/plenary.nvim'}},
       cmd = "Telescope",
       config = "require('telescope-config')"
     }
 
     -- Autocomplete
-    use { 'neovim/nvim-lspconfig', config = "require('lsp')" }
-    use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }
-    use { 'williamboman/nvim-lsp-installer' }
+    use {'neovim/nvim-lspconfig', config = "require('lsp')"}
+    use {'tami5/lspsaga.nvim'}
+    use {'williamboman/nvim-lsp-installer'}
+    use {'hrsh7th/cmp-nvim-lsp-signature-help'}
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -70,7 +71,11 @@ return require('packer').startup({
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-    use { 'windwp/nvim-autopairs', config = "require('autopair-config')", after = "nvim-cmp" }
+    use {'windwp/nvim-autopairs', config = "require('autopair-config')", after = "nvim-cmp"}
+    -- Indent Guide
+    -- use "lukas-reineke/indent-blankline.nvim"
+    -- Auto Indent/Format/Diagnostic
+    use {'jose-elias-alvarez/null-ls.nvim'}
 
     -- Tabnine
     use {
@@ -89,30 +94,26 @@ return require('packer').startup({
     -- Git Sign
     use {
       'lewis6991/gitsigns.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
+      requires = {'nvim-lua/plenary.nvim'},
       config = "require('gitsigns-config')"
       -- tag = 'release' -- To use the latest release
     }
 
     -- Menu for NeoVim
-    use { 'glepnir/dashboard-nvim' }
-
-    -- Indent Guide
-    -- use "lukas-reineke/indent-blankline.nvim"
-
-    -- Auto Indent/Format
-    use { 'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')" }
+    use {'glepnir/dashboard-nvim'}
 
     -- Terminal inside Vim
-    use { "akinsho/toggleterm.nvim", config = "require('toggleterm-config')" }
+    use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
 
     -- Comment in Vim
-    use { 'terrortylor/nvim-comment', config = "require('comment-config')" }
-    use 'suy/vim-context-commentstring'
+    use {'numToStr/Comment.nvim', config = "require('comment-config')"}
+    -- use {'terrortylor/nvim-comment', config = "require('comment-config')"}
+    -- use 'suy/vim-context-commentstring'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     -- sql
-    use { "tpope/vim-dadbod", config = "require('dadbod-config')" }
-    use { 'kristijanhusak/vim-dadbod-ui', after = "vim-dadbod" }
+    use {"tpope/vim-dadbod", config = "require('dadbod-config')"}
+    use {'kristijanhusak/vim-dadbod-ui', after = "vim-dadbod"}
 
     -- Vim Surround
     -- This have been disappeared
@@ -133,24 +134,24 @@ return require('packer').startup({
 
     -- Text Object
     use 'michaeljsmith/vim-indent-object'
-    use { 'nvim-treesitter/nvim-treesitter-textobjects', run = ':TSUpdate' }
+    use {'nvim-treesitter/nvim-treesitter-textobjects', run = ':TSUpdate'}
 
     -- Zen Mode
-    use { 'folke/zen-mode.nvim', config = "require('zenmode-config')" }
-    use { "folke/twilight.nvim", config = "require('twilight-config')" }
+    use {'folke/zen-mode.nvim', config = "require('zenmode-config')"}
+    use {"folke/twilight.nvim", config = "require('twilight-config')"}
 
     -- Document Generation
-    use { 'kkoomen/vim-doge', run = ":call doge#install()" }
+    use {'kkoomen/vim-doge', run = ":call doge#install()", config = "require('doge-config')"}
 
     -- Rest HTTP Request
     use 'NTBBloodbath/rest.nvim'
 
-    use { 'mfussenegger/nvim-dap', config = "require('nvim-dap')" }
-    use { 'nvim-telescope/telescope-dap.nvim', requires = { 'mfussenegger/nvim-dap' } }
-    use { 'theHamsta/nvim-dap-virtual-text', requires = { 'mfussenegger/nvim-dap' } }
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use {'mfussenegger/nvim-dap', config = "require('nvim-dap')"}
+    use {'nvim-telescope/telescope-dap.nvim', requires = {'mfussenegger/nvim-dap'}}
+    use {'theHamsta/nvim-dap-virtual-text', requires = {'mfussenegger/nvim-dap'}}
+    use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
-    use { 'aserowy/tmux.nvim', config = "require('tmux-config')" }
+    use {'aserowy/tmux.nvim', config = "require('tmux-config')"}
 
     use 'github/copilot.vim'
 
@@ -160,7 +161,7 @@ return require('packer').startup({
   config = {
     display = {
       open_fn = function()
-        return require('packer.util').float({ border = 'single' })
+        return require('packer.util').float({border = 'single'})
       end
     }
   }

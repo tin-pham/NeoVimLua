@@ -21,8 +21,8 @@ require 'nvim-tree'.setup {
     width = 25
   },
   renderer = {
-    indent_markers = { enable = true, icons = { corner = "└ ", edge = "│ ", none = "  " } },
-    root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
+    indent_markers = { enable = true },
+    root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1003), "?:gs?^??" },
     highlight_git = true,
     highlight_opened_files = "none",
     add_trailing = false,
