@@ -1,27 +1,16 @@
-local lsp_installer = require('nvim-lsp-installer')
+local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not status_ok then return end
 
-lsp_installer.on_server_ready(function(server)
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
-    .make_client_capabilities())
-  local opts = { capabilities = capabilities }
-  if server.name == "sumneko_lua" then
-    opts = vim.tbl_deep_extend("force", {
-      settings = {
-        Lua = {
-          runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
-          diagnostics = { globals = { 'vim' } },
-          workspace = { library = vim.api.nvim_get_runtime_file("", true), checkThirdParty = false },
-          telemetry = { enable = false }
-        }
-      }
-    }, opts)
-  end
+local lspconfig = require("lspconfig")
+local servers = {"jsonls", "sumneko_lua", "emmet_ls", "tsserver", "cssls", "html"}
+lsp_installer.setup({ensure_installed = servers})
 
-  if server.name == "emmet_ls" then
-    opts = vim.tbl_deep_extend("force",
-      { filetypes = { "html", "css", "typescriptreact", "javascriptreact" } },
-      opts)
-  end
-
-  server:setup(opts)
-end)
+for _, server in pairs(servers) do
+  local opts = {
+    on_attach = require("lsp.diagnostic_signs").on_attach,
+    capabilities = require("lsp.diagnostic_signs").capabilities
+  }
+  local has_custom_opts, server_custom_opts = pcall(require, "lsp.settings." .. server)
+  if has_custom_opts then opts = vim.tbl_deep_extend("force", opts, server_custom_opts) end
+  lspconfig[server].setup(opts)
+end

@@ -1,22 +1,9 @@
 local null_ls = require('null-ls')
 
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
-local diagnostic = null_ls.builtins.diagnostics
-
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(clients)
-      -- filter out clients that you don't want to use
-      return vim.tbl_filter(function(client)
-        return client.name ~= "tsserver"
-      end, clients)
-    end,
-    bufnr = bufnr
-  })
-end
-
--- if you want to set up formatting on save, you can use this as a callback
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   sources = {

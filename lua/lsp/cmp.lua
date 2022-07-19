@@ -1,5 +1,9 @@
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then return end
+
 local lspkind = require('lspkind')
-vim.g.completeopt = "menu,menuone,noselect"
+-- vim.g.completeopt = "menu,menuone,noselect"
+
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0
@@ -9,19 +13,21 @@ end
 
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-end
--- Setup nvim-cmp.
-local cmp = require 'cmp'
+end -- Setup nvim-cmp.
 
 local source_mapping = {
-  buffer = "[Buffer]",
   nvim_lsp = "[LSP]",
-  nvim_lua = "[Lua]",
-  cmp_tabnine = "[TabNine]",
-  path = "[Path]",
   vsnip = "[Vsnip]",
-  dictionary = "[Dict]"
+  buffer = "[Buffer]",
+  path = "[Path]",
+  cmp_tabnine = "[TabNine]"
 }
+
+local sources = {
+  {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'cmp_tabnine'},
+  {name = 'nvim_lsp_signature_help'}
+}
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -59,22 +65,16 @@ cmp.setup({
       end
     end, {"i", "s"})
   },
-  sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'cmp_tabnine'}},
+  sources = sources,
 
   -- lspkind plugin
   formatting = {
-    format = lspkind.cmp_format({
-      with_text = true,
-      maxwidth = 50,
-      menu = {
-        buffer = "[Buf]",
-        cmp_tabnine = "[Tabnine]",
-        nvim_lsp = "[LSP]",
-        dictionary = "[Dict]",
-        vsnip = "[Vsnip]"
-      }
-    })
-  }
+    fields = {"kind", "abbr", "menu"},
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50, menu = source_mapping})
+  },
+  confirm_opts = {behavior = cmp.ConfirmBehavior.Replace, select = false},
+  window = {documentation = {border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}}},
+  experimental = {ghost_text = false, native_menu = false}
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
