@@ -20,6 +20,7 @@ return require('packer').startup({
     use 'rose-pine/neovim'
     -- Syntax Highlight
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
+    use {'nvim-treesitter/nvim-treesitter-context'}
 
     -- Extenstion
     use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
@@ -30,12 +31,13 @@ return require('packer').startup({
     use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
 
     -- Buffer Line
-    use {
-      'akinsho/bufferline.nvim',
-      requires = 'kyazdani42/nvim-web-devicons',
-      event = "BufWinEnter",
-      config = "require('bufferline-config')"
-    }
+    -- use {
+    --   'akinsho/bufferline.nvim',
+    --   requires = 'kyazdani42/nvim-web-devicons',
+    --   event = "BufWinEnter",
+    --   config = "require('bufferline-config')"
+    -- }
+    use {'fgheng/winbar.nvim', config = "require('winbar-config')"}
 
     use {
       'tamton-aquib/staline.nvim',

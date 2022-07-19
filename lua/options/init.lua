@@ -8,14 +8,12 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.opt.termguicolors = true
 vim.o.conceallevel = 0
-vim.o.showtabline = 2
+vim.o.showtabline = 0
 vim.o.showmode = true
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
-vim.o.timeoutlen = 100
--- vim.o.clipboard = 'unnamedplus'
-vim.o.hlsearch = false
+vim.o.timeoutlen = 100 -- vim.o.clipboard = 'unnamedplus' vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
@@ -35,8 +33,11 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.o.wildmenu = true
+-- 0.8 feature
+vim.o.winbar = "%f" -- enable by default so we don't need this anymore
+vim.o.laststatus = 3
 
-vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = {eob = " "}
 
 -- Change file type
 vim.cmd('au BufNewFile,BufRead *.ejs set filetype=html')
