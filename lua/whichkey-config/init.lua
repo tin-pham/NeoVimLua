@@ -13,11 +13,11 @@ local toggle_lazygit = function()
 end
 
 local scroll_down_hover = function()
-  action.smart_scroll_with_saga(1)
+  action.smart_scroll_with_saga(1, '<C-f>')
 end
 
 local scroll_up_hover = function()
-  action.smart_scroll_with_saga(-1)
+  action.smart_scroll_with_saga(-1, '<C-b>')
 end
 
 local opts = {mode = 'n', prefix = '<leader>', silent = true, noremap = true, nowait = false}
@@ -56,6 +56,7 @@ local mappings = {
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
+    h = {"<cmd>Lspsaga lsp_finder<CR>", "Async LSP Finder"},
     k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
     K = {'<cmd>Lspsaga hover_doc<cr>', "Hover Command"},
     f = {scroll_down_hover, 'Scroll down hover doc'},
@@ -67,10 +68,11 @@ local mappings = {
       "List workspace folder"
     },
     t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
-    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    -- d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    d = {'<cmd>Lspsaga preview_definition<CR>', 'Preview Definition'},
     D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
-    r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"},
-    R = {'<cmd>Lspsaga rename<cr>', "Rename"},
+    -- r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"},
+    r = {'<cmd>Lspsaga rename<cr>', "Rename"},
     a = {'<cmd>Lspsaga code_action<cr>', "Code actions"},
     e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show line diagnostics"},
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
