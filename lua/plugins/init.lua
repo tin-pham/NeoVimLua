@@ -77,6 +77,9 @@ return require('packer').startup({
     -- Auto Indent/Format/Diagnostic
     use {'jose-elias-alvarez/null-ls.nvim'}
 
+    -- Highlight Document on Hover
+    use 'RRethy/vim-illuminate'
+
     -- Tabnine
     use {
       'tzachar/cmp-tabnine',
