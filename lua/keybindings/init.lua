@@ -13,8 +13,9 @@ map('n', 'gb', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
 map('n', 'gp', ':BufferLinePick<CR>', {noremap = true, silent = true})
 map('n', 'gc', ':BufferLinePickClose<CR>', {noremap = true, silent = true})
 
--- Lua Tree Navigation
-map('n', '<C-f>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+-- Lua NeoTree Navigation
+map('n', '<C-f>', ':Neotree<CR>', {noremap = true, silent = true})
+map('n', '<C-g>', ':Neotree float git_status git_base=master<CR>', {noremap = true, silent = true})
 
 -- Move around split
 map('n', '<C-h>', '<C-w>h', {noremap = true, silent = true})

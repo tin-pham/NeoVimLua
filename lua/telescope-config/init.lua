@@ -14,6 +14,18 @@ require('telescope').setup {
     find_command = {
       'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
     },
+    find_browser = {
+      theme = 'ivy',
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        }
+      }
+    },
     prompt_prefix = " ",
     selection_caret = "  ",
     entry_prefix = "  ",
@@ -22,7 +34,10 @@ require('telescope').setup {
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
+    file_ignore_patterns = {
+      "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*", "build", "dist",
+      "yarn.lock"
+    },
     generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
     path_display = {},
     winblend = 0,
@@ -51,3 +66,5 @@ require('telescope').setup {
     }
   }
 }
+
+require('telescope').load_extension('file_browser')

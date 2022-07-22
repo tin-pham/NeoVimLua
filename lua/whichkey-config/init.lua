@@ -32,12 +32,13 @@ local mappings = {
     name = 'Telescope',
     f = {"<cmd>Telescope find_files<cr>", "Find File"},
     g = {"<cmd>Telescope live_grep<cr>", "Find Word"},
-    b = {"<cmd>Telescope buffers<cr>", "Find Buffer"}
+    b = {"<cmd>Telescope file_browser<cr>", "Find Browser"}
   },
   g = {t = {"<Plug>Titlecase", "Capitalize text"}},
   d = {
     t = {":DBUIToggle<CR>", "Dadbod Toggle"},
     name = 'Debug',
+    g = {":DogeGenerate<CR>", "Document Genrerat"},
     b = {":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint"},
     n = {":lua require'dap'.step_over()<cr>", "Step Over"},
     l = {":lua require'dap'.step_into()<cr>", "Step Into"},
@@ -68,8 +69,8 @@ local mappings = {
       "List workspace folder"
     },
     t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
-    -- d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
-    d = {'<cmd>Lspsaga preview_definition<CR>', 'Preview Definition'},
+    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    -- d = {'<cmd>Lspsaga preview_definition<CR>', 'Preview Definition'},
     D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
     -- r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"},
     r = {'<cmd>Lspsaga rename<cr>', "Rename"},

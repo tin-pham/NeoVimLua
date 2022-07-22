@@ -18,6 +18,8 @@ return require('packer').startup({
     -- Theme
     use 'olimorris/onedarkpro.nvim'
     use 'rose-pine/neovim'
+
+    use {'xiyaowong/nvim-transparent', config = "require('transparent-config')"}
     -- Syntax Highlight
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
     use {'nvim-treesitter/nvim-treesitter-context'}
@@ -51,6 +53,17 @@ return require('packer').startup({
       requires = 'kyazdani42/nvim-web-devicons',
       config = "require('nvim-tree-config')"
     }
+
+    use {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "main",
+      requires = {
+        "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim"
+      },
+      config = "require('neotree-config')"
+    }
+
     -- Which Key
     use {"folke/which-key.nvim", event = "BufWinEnter", config = "require('whichkey-config')"}
     -- Telescope
@@ -60,6 +73,8 @@ return require('packer').startup({
       cmd = "Telescope",
       config = "require('telescope-config')"
     }
+
+    use {"nvim-telescope/telescope-file-browser.nvim"}
 
     -- Autocomplete
     use {'neovim/nvim-lspconfig', config = "require('lsp')"}
@@ -94,7 +109,7 @@ return require('packer').startup({
     use 'onsails/lspkind-nvim'
 
     -- Color in Buffer
-    use 'norcalli/nvim-colorizer.lua'
+    use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
 
     -- Git Sign
     use {

@@ -57,7 +57,7 @@ db.custom_header = {
 db.custom_center = {
   {
     icon = '  ',
-    desc = 'Recently laset session                  ',
+    desc = 'Recently last session                  ',
     shortcut = 'SPC s l',
     action = 'SessionLoad'
   }, {
@@ -79,6 +79,6 @@ db.custom_center = {
     icon = '  ',
     desc = 'Find  word                              ',
     aciton = 'DashboardFindWord',
-    shortcut = 'SPC f w'
+    shortcut = 'SPC f g'
   }
 }
