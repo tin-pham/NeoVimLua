@@ -1,5 +1,5 @@
 local actions = require('telescope.actions')
-require('telescope').load_extension('dap')
+-- require('telescope').load_extension('dap')
 -- require('telestope').setup {}
 require('telescope').setup {
   defaults = {
@@ -50,6 +50,7 @@ require('telescope').setup {
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+    extensions = {media_files = {filetypes = {"png", "jpg", "pdf", "jpeg"}, find_cmd = "rg"}},
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -66,5 +67,6 @@ require('telescope').setup {
     }
   }
 }
-
-require('telescope').load_extension('file_browser')
+-- require('telescope').load_extension('file_browser')
+-- require('telescope').load_extension('media_files')
+-- require('telescope').extensions.media_files.media_files()
