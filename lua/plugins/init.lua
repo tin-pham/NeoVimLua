@@ -7,7 +7,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 
   vim.api.nvim_command('packadd packer.nvim')
 end
-
 return require('packer').startup({
   function(use)
     -- Packer can manage itself
@@ -16,7 +15,6 @@ return require('packer').startup({
     -- Dependencies
     use 'nvim-lua/plenary.nvim'
     -- Theme
-    use 'olimorris/onedarkpro.nvim'
     use 'rose-pine/neovim'
 
     use {'xiyaowong/nvim-transparent', config = "require('transparent-config')"}
@@ -30,7 +28,7 @@ return require('packer').startup({
     use {'kyazdani42/nvim-web-devicons', config = "require('devicon-config')"}
 
     -- Status Line
-    use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+    -- use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
 
     -- Buffer Line
     -- use {
@@ -41,18 +39,18 @@ return require('packer').startup({
     -- }
     use {'fgheng/winbar.nvim', config = "require('winbar-config')"}
 
-    use {
-      'tamton-aquib/staline.nvim',
-      requires = 'kyazdani42/nvim-web-devicons',
-      event = "BufWinEnter",
-      config = "require('staline-config')"
-    }
+    -- use {
+    --   'tamton-aquib/staline.nvim',
+    --   requires = 'kyazdani42/nvim-web-devicons',
+    --   event = "BufWinEnter",
+    --   config = "require('staline-config')"
+    -- }
     -- Directory Tree
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = "require('nvim-tree-config')"
-    }
+    -- use {
+    --   'kyazdani42/nvim-tree.lua',
+    --   requires = 'kyazdani42/nvim-web-devicons',
+    --   config = "require('nvim-tree-config')"
+    -- }
 
     use {
       "nvim-neo-tree/neo-tree.nvim",
@@ -74,12 +72,21 @@ return require('packer').startup({
       config = "require('telescope-config')"
     }
 
-    use {"nvim-telescope/telescope-file-browser.nvim"}
+    -- use {"nvim-telescope/telescope-file-browser.nvim"}
+    -- use {'nvim-lua/popup.nvim'}
+    -- use {'nvim-telescope/telescope-media-files.nvim'}
 
     -- Autocomplete
-    use {'neovim/nvim-lspconfig', config = "require('lsp')"}
+
+    use {
+      {"williamboman/mason.nvim", config = "require('lsp')"}, "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig"
+    }
+    -- use {'neovim/nvim-lspconfig', config = "require('lsp')"}
     use {'tami5/lspsaga.nvim'}
-    use {'williamboman/nvim-lsp-installer'}
+    -- use {"williamboman/mason.nvim"}
+    -- use {"williamboman/mason-lspconfig.nvim"}
+    -- use {'williamboman/nvim-lsp-installer'}
     use {'hrsh7th/cmp-nvim-lsp-signature-help'}
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -98,13 +105,13 @@ return require('packer').startup({
     use 'RRethy/vim-illuminate'
 
     -- Tabnine
-    use {
-      'tzachar/cmp-tabnine',
-      run = './install.sh',
-      requires = 'hrsh7th/nvim-cmp',
-      config = "require('tabnine-config')",
-      after = "nvim-cmp"
-    }
+    -- use {
+    --   'tzachar/cmp-tabnine',
+    --   run = './install.sh',
+    --   requires = 'hrsh7th/nvim-cmp',
+    --   config = "require('tabnine-config')",
+    --   after = "nvim-cmp"
+    -- }
     -- Icon for autocomplete
     use 'onsails/lspkind-nvim'
 
@@ -163,17 +170,27 @@ return require('packer').startup({
     -- Document Generation
     use {'kkoomen/vim-doge', run = ":call doge#install()", config = "require('doge-config')"}
 
+    -- Org mode
+
+    use {
+      "nvim-neorg/neorg",
+      after = 'nvim-treesitter',
+      requires = "nvim-lua/plenary.nvim",
+      config = "require('neorg-config')"
+    }
     -- Rest HTTP Request
     use 'NTBBloodbath/rest.nvim'
 
-    use {'mfussenegger/nvim-dap', config = "require('nvim-dap')"}
-    use {'nvim-telescope/telescope-dap.nvim', requires = {'mfussenegger/nvim-dap'}}
-    use {'theHamsta/nvim-dap-virtual-text', requires = {'mfussenegger/nvim-dap'}}
-    use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+    -- use {'mfussenegger/nvim-dap', config = "require('nvim-dap')"}
+    -- use {'nvim-telescope/telescope-dap.nvim', requires = {'mfussenegger/nvim-dap'}}
+    -- use {'theHamsta/nvim-dap-virtual-text', requires = {'mfussenegger/nvim-dap'}}
+    -- use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
     use {'aserowy/tmux.nvim', config = "require('tmux-config')"}
 
-    use 'github/copilot.vim'
+    -- use {"zakharykaplan/nvim-retrail", config = "require('retrail-config')"}
+
+    -- use 'github/copilot.vim'
 
     -- use { 'andweeb/presence.nvim', config = "require('presence-config')" }
     -- use 'vimpostor/vim-tpipeline'
