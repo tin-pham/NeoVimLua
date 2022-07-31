@@ -35,7 +35,7 @@ vim.bo.expandtab = true
 vim.o.wildmenu = true
 -- 0.8 feature
 vim.o.winbar = "%f" -- enable by default so we don't need this anymore
-vim.o.laststatus = 3
+vim.o.laststatus = 0
 
 vim.opt.fillchars = {eob = " "}
 
