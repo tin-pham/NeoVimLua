@@ -19,13 +19,13 @@ local source_mapping = {
   nvim_lsp = "[LSP]",
   vsnip = "[Vsnip]",
   buffer = "[Buffer]",
-  path = "[Path]",
-  cmp_tabnine = "[TabNine]"
+  path = "[Path]"
+  -- cmp_tabnine = "[TabNine]"
 }
 
 local sources = {
-  {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'cmp_tabnine'},
-  {name = 'nvim_lsp_signature_help'}
+  {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'},
+  {name = 'nvim_lsp_signature_help'}, {name = 'neorg'}
 }
 
 cmp.setup({
