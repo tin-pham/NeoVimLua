@@ -1,4 +1,23 @@
-local whichkey_utils = require('whichkey-config.utils')
+local action = require('lspsaga.action')
+local Terminal = require('toggleterm.terminal').Terminal
+
+local toggle_float = function()
+  local float = Terminal:new({direction = "float"})
+  return float:toggle()
+end
+
+local toggle_lazygit = function()
+  local lazygit = Terminal:new({cmd = 'lazygit', direction = "float"})
+  return lazygit:toggle()
+end
+
+local scroll_down_hover = function()
+  action.smart_scroll_with_saga(1, '<C-f>')
+end
+
+local scroll_up_hover = function()
+  action.smart_scroll_with_saga(-1, '<C-b>')
+end
 
 local M = {}
 
@@ -47,8 +66,8 @@ M.lsp = {
     h = {"<cmd>Lspsaga lsp_finder<CR>", "Async LSP Finder"},
     k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
     K = {'<cmd>Lspsaga hover_doc<cr>', "Hover Command"},
-    f = {whichkey_utils.scroll_down_hover, 'Scroll down hover doc'},
-    b = {whichkey_utils.scroll_up_hover, 'Scroll up hover doc'},
+    f = {scroll_down_hover, 'Scroll down hover doc'},
+    b = {scroll_up_hover, 'Scroll up hover doc'},
     w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"},
     W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"},
     l = {
@@ -94,8 +113,8 @@ M.general = {
   t = {
     -- Term
     t = {":ToggleTerm<cr>", "Split Below"},
-    f = {whichkey_utils.toggle_float, "Floating Terminal"},
-    l = {whichkey_utils.toggle_lazygit, "Lazygit"}
+    f = {toggle_float, "Floating Terminal"},
+    l = {toggle_lazygit, "Lazygit"}
   },
   z = {name = "Focus Mode", z = {":ZenMode<cr>", "Zen Mode"}, t = {":Twilight<cr>", "Twilight"}},
   p = {
