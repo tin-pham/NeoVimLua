@@ -2,7 +2,7 @@ local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 
 local lspconfig = require("lspconfig")
-local servers = {"jsonls", "sumneko_lua", "emmet_ls", "tsserver", "cssls", "html"}
+local servers = {"jsonls", "sumneko_lua", "emmet_ls", "tsserver", "cssls", "html", "bashls"}
 mason.setup({
   ui = {
     icons = {package_installed = "✓", package_pending = "➜", package_uninstalled = "✗"},

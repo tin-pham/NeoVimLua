@@ -7,7 +7,8 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   sources = {
-    formatting.clang_format, formatting.prettier, formatting.remark, formatting.lua_format.with({
+    formatting.clang_format, formatting.prettier, formatting.remark, formatting.shfmt,
+    formatting.lua_format.with({
       extra_args = {
         '--no-keep-simple-function-one-line', '--no-break-after-operator', '--column-limit=100',
         '--break-after-table-lb', '--indent-width=2'
