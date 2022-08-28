@@ -2,10 +2,9 @@ local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 
 local lspconfig = require("lspconfig")
-local servers = {"jsonls", "sumneko_lua", "emmet_ls", "tsserver", "cssls", "html", "bashls"}
 mason.setup({
   ui = {
-    icons = {package_installed = "✓", package_pending = "➜", package_uninstalled = "✗"},
+    icons = { package_installed = "✓", package_pending = "➜", package_uninstalled = "✗" },
     keymaps = {
       -- Keymap to expand a package
       toggle_package_expand = "<CR>",
@@ -28,7 +27,9 @@ mason.setup({
     }
   }
 })
-mason_lspconfig.setup({ensure_installed = servers})
+local servers = { "jsonls", "sumneko_lua", "emmet_ls", "tsserver", "cssls", "html", "bashls", "sqls" }
+
+mason_lspconfig.setup({ ensure_installed = servers })
 
 for _, server in pairs(servers) do
   local opts = {

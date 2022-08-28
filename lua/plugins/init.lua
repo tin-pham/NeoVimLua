@@ -17,15 +17,15 @@ return require('packer').startup({
     -- Theme
     use 'rose-pine/neovim'
 
-    use {'xiyaowong/nvim-transparent', config = "require('transparent-config')"}
+    use { 'xiyaowong/nvim-transparent', config = "require('transparent-config')" }
     -- Syntax Highlight
-    use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
-    use {'nvim-treesitter/nvim-treesitter-context'}
+    use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+    use { 'nvim-treesitter/nvim-treesitter-context' }
 
     -- Extenstion
-    use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
+    use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
     -- use 'p00f/nvim-ts-rainbow' -- Rainbow
-    use {'kyazdani42/nvim-web-devicons', config = "require('devicon-config')"}
+    use { 'kyazdani42/nvim-web-devicons', config = "require('devicon-config')" }
 
     -- Status Line
     -- use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -37,7 +37,7 @@ return require('packer').startup({
     --   event = "BufWinEnter",
     --   config = "require('bufferline-config')"
     -- }
-    use {'fgheng/winbar.nvim', config = "require('winbar-config')"}
+    use { 'fgheng/winbar.nvim', config = "require('winbar-config')" }
 
     -- use {
     --   'tamton-aquib/staline.nvim',
@@ -63,11 +63,11 @@ return require('packer').startup({
     }
 
     -- Which Key
-    use {"folke/which-key.nvim", event = "BufWinEnter", config = "require('whichkey-config')"}
+    use { "folke/which-key.nvim", event = "BufWinEnter", config = "require('whichkey-config')" }
     -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/plenary.nvim'}},
+      requires = { { 'nvim-lua/plenary.nvim' } },
       cmd = "Telescope",
       config = "require('telescope-config')"
     }
@@ -79,15 +79,15 @@ return require('packer').startup({
     -- Autocomplete
 
     use {
-      {"williamboman/mason.nvim", config = "require('lsp')"}, "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig"
+      { "williamboman/mason.nvim", config = "require('lsp')" }, "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig", "WhoIsSethDaniel/mason-tool-installer.nvim"
     }
     -- use {'neovim/nvim-lspconfig', config = "require('lsp')"}
-    use {'tami5/lspsaga.nvim'}
+    use { 'tami5/lspsaga.nvim' }
     -- use {"williamboman/mason.nvim"}
     -- use {"williamboman/mason-lspconfig.nvim"}
     -- use {'williamboman/nvim-lsp-installer'}
-    use {'hrsh7th/cmp-nvim-lsp-signature-help'}
+    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -95,11 +95,11 @@ return require('packer').startup({
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-    use {'windwp/nvim-autopairs', config = "require('autopair-config')", after = "nvim-cmp"}
+    use { 'windwp/nvim-autopairs', config = "require('autopair-config')", after = "nvim-cmp" }
     -- Indent Guide
     -- use "lukas-reineke/indent-blankline.nvim"
     -- Auto Indent/Format/Diagnostic
-    use {'jose-elias-alvarez/null-ls.nvim'}
+    use { 'jose-elias-alvarez/null-ls.nvim' }
 
     -- Highlight Document on Hover
     use 'RRethy/vim-illuminate'
@@ -116,31 +116,31 @@ return require('packer').startup({
     use 'onsails/lspkind-nvim'
 
     -- Color in Buffer
-    use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
+    use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')" }
 
     -- Git Sign
     use {
       'lewis6991/gitsigns.nvim',
-      requires = {'nvim-lua/plenary.nvim'},
+      requires = { 'nvim-lua/plenary.nvim' },
       config = "require('gitsigns-config')"
       -- tag = 'release' -- To use the latest release
     }
 
     -- Menu for NeoVim
-    use {'glepnir/dashboard-nvim'}
+    use { 'glepnir/dashboard-nvim' }
 
     -- Terminal inside Vim
-    use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
+    use { "akinsho/toggleterm.nvim", config = "require('toggleterm-config')" }
 
     -- Comment in Vim
-    use {'numToStr/Comment.nvim', config = "require('comment-config')"}
+    use { 'numToStr/Comment.nvim', config = "require('comment-config')" }
     -- use {'terrortylor/nvim-comment', config = "require('comment-config')"}
     -- use 'suy/vim-context-commentstring'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     -- sql
-    use {"tpope/vim-dadbod", config = "require('dadbod-config')"}
-    use {'kristijanhusak/vim-dadbod-ui', after = "vim-dadbod"}
+    use { "tpope/vim-dadbod", config = "require('dadbod-config')" }
+    use { 'kristijanhusak/vim-dadbod-ui', after = "vim-dadbod" }
 
     -- Vim Surround
     -- This have been disappeared
@@ -161,23 +161,23 @@ return require('packer').startup({
 
     -- Text Object
     use 'michaeljsmith/vim-indent-object'
-    use {'nvim-treesitter/nvim-treesitter-textobjects', run = ':TSUpdate'}
+    use { 'nvim-treesitter/nvim-treesitter-textobjects', run = ':TSUpdate' }
 
     -- Zen Mode
-    use {'folke/zen-mode.nvim', config = "require('zenmode-config')"}
-    use {"folke/twilight.nvim", config = "require('twilight-config')"}
+    use { 'folke/zen-mode.nvim', config = "require('zenmode-config')" }
+    use { "folke/twilight.nvim", config = "require('twilight-config')" }
 
     -- Document Generation
-    use {'kkoomen/vim-doge', run = ":call doge#install()", config = "require('doge-config')"}
+    use { 'kkoomen/vim-doge', run = ":call doge#install()", config = "require('doge-config')" }
 
     -- Org mode
 
-    use {
-      "nvim-neorg/neorg",
-      after = 'nvim-treesitter',
-      requires = "nvim-lua/plenary.nvim",
-      config = "require('neorg-config')"
-    }
+    --use {
+    --  "nvim-neorg/neorg",
+    --  after = 'nvim-treesitter',
+    --  requires = "nvim-lua/plenary.nvim",
+    --  config = "require('neorg-config')"
+    --}
     -- Rest HTTP Request
     use 'NTBBloodbath/rest.nvim'
 
@@ -186,7 +186,8 @@ return require('packer').startup({
     -- use {'theHamsta/nvim-dap-virtual-text', requires = {'mfussenegger/nvim-dap'}}
     -- use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
-    use {'aserowy/tmux.nvim', config = "require('tmux-config')"}
+    use { 'aserowy/tmux.nvim', config = "require('tmux-config')" }
+    use { 'karb94/neoscroll.nvim', config = "require('neoscroll-config')" }
 
     -- use {"zakharykaplan/nvim-retrail", config = "require('retrail-config')"}
 
@@ -198,7 +199,7 @@ return require('packer').startup({
   config = {
     display = {
       open_fn = function()
-        return require('packer.util').float({border = 'single'})
+        return require('packer.util').float({ border = 'single' })
       end
     }
   }
